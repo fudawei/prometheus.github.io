@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57-cbdc07aa911.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60-cb07eb42bf2.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72-cb8e8e32eb9.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76-cbcc02c6797.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114-cb4c83ee62c.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120-cb75d3d4808.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144-cb1c3d64031.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152-cb768736a7d.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180-cbb275d6db3.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32-cb4125f33f0.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192-cbeb02a34ac.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96-cb7775fd5d3.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16-cb9f96fc86e.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <title>Interview with Incopro | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/assets/bootstrap-3.3.1/css/bootstrap.min-cb3ab3438f8.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/docs-cbd81c8f773.css" rel="stylesheet">
+    <link href="/css/routing-tree-editor-cbd4d13cac6.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/assets/font-awesome-4.2.0/css/font-awesome.min-cbfeda974a7.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/assets/prometheus_logo_grey.svg" alt="Prometheus logo"> Prometheus</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/docs/introduction/overview/">Docs</a></li>
+            <li><a href="/download/">Download</a></li>
+            <li><a href="/community/">Community</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="https://github.com/prometheus"><i class="fa fa-github"></i></a></li>
+            <li><a href="https://twitter.com/PrometheusIO"><i class="fa fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<div class="container">
+  
+<div class="row">
+  <div class="col-md-9 blog doc-content">
+    <h1>Interview with Incopro</h1>
+    <aside>Posted at: September 28, 2016 by Brian Brazil</aside>
+    <article class="doc-content">
+      <p><em>Continuing our series of interviews with users of Prometheus, Incopro talks
+about how they went from Zabbix and Monit to Prometheus.</em></p>
+
+<h2 id="can-you-tell-us-about-yourself-and-what-incorpo-does?">Can you tell us about yourself and what Incorpo does?<a class="header-anchor" href="#can-you-tell-us-about-yourself-and-what-incorpo-does" name="can-you-tell-us-about-yourself-and-what-incorpo-does"></a>
+</h2>
+
+<p><a href="http://www.incopro.co.uk/">Incopro</a> is a brand protection company. It uses
+technology, combined with IP and investigation expertise, to deliver effective
+and targeted protection to businesses looking to protect their IP assets
+online. Its Talisman brand protection system is used by many of the largest
+global brands to track and assess infringement issues across marketplaces,
+websites, social media, app stores and more. Incopro’s expert analyst team use
+the Talisman technology and a range of language skills (including Japanese,
+Korean, Arabic, Russian, Mandarin, Cantonese, Punjabi etc.) to deliver
+prioritised enforcement against commercial scale infringements. Incopro was
+founded by a law firm and operates from its own central London HQ. The
+company's use of technology to deliver scalable enforcement was recognised by
+the Financial Times newspaper as the most innovative development in IP in 2015.</p>
+
+<p>My name is Akos Veres, Operations Engineer at Incopro, I had the task of
+setting up the proper monitoring solution for our company, as well as help with
+day to day operations in the short term. I became the only Ops at the company
+so everything falls under my jurisdiction.</p>
+
+<h2 id="what-was-your-pre-prometheus-monitoring-experience?">What was your pre-Prometheus monitoring experience?<a class="header-anchor" href="#what-was-your-pre-prometheus-monitoring-experience" name="what-was-your-pre-prometheus-monitoring-experience"></a>
+</h2>
+
+<p>There wasn’t a real solution, especially no alerting in place.
+<a href="http://www.zabbix.com/">Zabbix</a> and <a href="https://mmonit.com/">Monit</a> have been
+used to some extent, when things started to get out of control. As the company
+grew bigger a new solution was needed and Prometheus was found back in December
+2015.</p>
+
+<h2 id="how-did-you-transition?">How did you transition?<a class="header-anchor" href="#how-did-you-transition" name="how-did-you-transition"></a>
+</h2>
+
+<p>At first we tried to mimic the old monitoring system, which was a good learning
+curve, to get the same kind of alerts we were getting from Zabbix, this
+involved using the
+<a href="https://github.com/prometheus/blackbox_exporter">blackbox_exporter</a> and some
+metrics from <a href="https://github.com/prometheus/node_exporter">node_exporter</a>. At
+that time, as far as I remember, Pushover was not available, thus the alerting
+was not possible and we didn’t want to transition to anything else. Other
+useful metrics showed up on our dashboards, which included our scrapers. We
+could finally visualize how much data are we collecting, troubleshooting
+improved a lot, and we could speed up our whole collection time based on these
+valuable metrics. Although during this time we were using the
+<a href="https://github.com/prometheus/pushgateway/">Pushgateway</a> way too much, we
+managed to make the data valuable for us.</p>
+
+<p><img src="/assets/blog/2016-09-28/devops-dashboard.PNG" alt="The state of the system"></p>
+
+<h2 id="what-improvements-have-you-seen-since-switching?">What improvements have you seen since switching?<a class="header-anchor" href="#what-improvements-have-you-seen-since-switching" name="what-improvements-have-you-seen-since-switching"></a>
+</h2>
+
+<p>After the whole alerting was switched over to Prometheus+Alertmanager and we
+tossed Zabbix out, we never looked back. Beside the previously mentioned
+scraping problems, Prometheus helped us realise which servers were over- or
+underused, having ~150 barebone servers across the world makes it hard to
+realize where are you over or underperforming. The Grafana dashboards were
+being watched by management and questions were being raised based on the
+metrics collected. Development and code has been refined to make things
+smoother for us and our customers. The Ops team had an easier job of getting
+alerts, especially after rules have been properly understood, nights were
+easier to get by as we were sure we would be alerted if something went wrong.
+We were finally able to monitor our whole infrastructure, Cassandra,
+Elasticsearch, MySQL, RabbitMQ, collection and analysis servers, proxies,
+frontend and other backend servers. The best way to tell how big of an impact
+Prometheus had on our business is to mention how fast some of our team members
+notice if new data is not showing up on our dashboards.</p>
+
+<p><img src="/assets/blog/2016-09-28/cassandra-dashboard.PNG" alt="Metrics from one of the 4 cassandra datacenters"></p>
+
+<h2 id="what-do-you-think-the-future-holds-for-incorpo-and-prometheus?">What do you think the future holds for Incorpo and Prometheus?<a class="header-anchor" href="#what-do-you-think-the-future-holds-for-incorpo-and-prometheus" name="what-do-you-think-the-future-holds-for-incorpo-and-prometheus"></a>
+</h2>
+
+<p>Making Prometheus scale or at least having multiple instances is helping us
+being more robust. The Alertmanager’s HA solution is definitely a welcome
+addition. The toughest job for us is to realize which metrics are the most
+important for us. Developers will need to output their metrics in the
+Prometheus way, which has not started, but the Ops team is pushing for these
+changes. We are going to be transitioning to Docker-based dynamically
+distributed instances, monitoring these will going to be essential and
+Prometheus is going to be the proper tool for it, as mentioned even at PromCon,
+it was designed for the dynamic world. As business grows so will the teams, and
+educating people about the use of Prometheus is going to be a high priority
+soon. Even our brand enforcement analysts could use the metrics provided
+through Prometheus to showcase their efficiency. We had discussions on
+outputting data from Prometheus to our clients so they know which markets are
+we watching for them and how efficient are we.</p>
+
+    <article>
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'prometheus-blog';
+     
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+
+  <div class="col-md-3 side-nav-col">
+  <ul class="nav navbar-nav side-nav">
+    <li>
+      <span class="nav-header">Blog posts</span>
+      <ul class="nav active">
+      
+        <li><a href="/blog/2016/09/28/interview-with-incopro/">Interview with Incopro</a></li>
+      
+        <li><a href="/blog/2016/09/21/interview-with-compose/">Interview with Compose</a></li>
+      
+        <li><a href="/blog/2016/09/14/interview-with-digitalocean/">Interview with DigitalOcean</a></li>
+      
+        <li><a href="/blog/2016/09/07/interview-with-shuttlecloud/">Interview with ShuttleCloud</a></li>
+      
+        <li><a href="/blog/2016/09/04/promcon-2016-its-a-wrap/">PromCon 2016 - It's a wrap!</a></li>
+      
+        <li><a href="/blog/2016/07/23/pull-does-not-scale-or-does-it/">Pull doesn't scale - or does it?</a></li>
+      
+        <li><a href="/blog/2016/07/18/prometheus-1-0-released/">Prometheus reaches 1.0</a></li>
+      
+        <li><a href="/blog/2016/05/09/prometheus-to-join-the-cloud-native-computing-foundation/">Prometheus to Join the Cloud Native Computing Foundation</a></li>
+      
+        <li><a href="/blog/2016/05/08/when-to-use-varbit-chunks/">When (not) to use varbit chunks</a></li>
+      
+        <li><a href="/blog/2016/05/01/interview-with-showmax/">Interview with ShowMax</a></li>
+      
+        <li><a href="/blog/2016/03/23/interview-with-life360/">Interview with Life360</a></li>
+      
+        <li><a href="/blog/2016/03/03/custom-alertmanager-templates/">Custom Alertmanager Templates</a></li>
+      
+        <li><a href="/blog/2016/01/26/one-year-of-open-prometheus-development/">One Year of Open Prometheus Development</a></li>
+      
+        <li><a href="/blog/2015/08/17/service-discovery-with-etcd/">Custom service discovery with etcd</a></li>
+      
+        <li><a href="/blog/2015/06/24/monitoring-dreamhack/">Monitoring DreamHack - the World's Largest Digital Festival</a></li>
+      
+        <li><a href="/blog/2015/06/18/practical-anomaly-detection/">Practical Anomaly Detection</a></li>
+      
+        <li><a href="/blog/2015/06/01/advanced-service-discovery/">Advanced Service Discovery in Prometheus 0.14.0</a></li>
+      
+        <li><a href="/blog/2015/04/24/prometheus-monitring-spreads-through-the-internet/">Prometheus Monitoring Spreads through the Internet</a></li>
+      
+      </ul>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+  <hr>
+
+<footer>
+  <p class="pull-left">
+    &copy; Prometheus Authors 2016
+  </p>
+</footer>
+
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+    <script src="/assets/bootstrap-3.3.1/js/bootstrap.min-cb2616d3564.js"></script>
+    <script src="/assets/docs-cbd4de6510b.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/ie10-viewport-bug-workaround-cbb5a0dd7ce.js"></script>
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-58468480-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
+
+
